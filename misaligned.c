@@ -1,16 +1,16 @@
 #include <stdio.h>
 #include <assert.h>
 
-void printOnConsole(int index , char* majorColor , char* minorColor)
+void printOnConsole(int AIndex_i , char* AmajorColor_c , char* AminorColor_c)
 {
     const char* majorColor[] = {"White", "Red", "Black", "Yellow", "Violet"};
     const char* minorColor[] = {"Blue", "Orange", "Green", "Brown", "Slate"};
-     if(index == 2)
+     if(AIndex_i == 2)
      {
-       assert( majorColor[0] == majorColor);
-       assert( minorColor[1] == minorColor);
+       assert( majorColor[0] == AmajorColor_c);
+       assert( minorColor[1] == AminorColor_c);
      }
-    printf("%d | %s | %s\n", i * 5 + j, majorColor, minorColor);
+    printf("%d | %s | %s\n", AIndex_i , AmajorColor_c, AminorColor_c);
 }
 
 
