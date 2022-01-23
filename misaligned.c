@@ -1,15 +1,21 @@
 #include <stdio.h>
 #include <assert.h>
 
+#define Max_Major_Color 5U
+#define Max_Minor_Color 5U
+
+/* This function will be check pair names aginst pair number befor getting print */
+
 void printOnConsole(int AIndex_i , const char* AmajorColor_c , const char* AminorColor_c)
 {
     const char* majorColor[] = {"White", "Red", "Black", "Yellow", "Violet"};
     const char* minorColor[] = {"Blue", "Orange", "Green", "Brown", "Slate"};
-     if(AIndex_i == 2)
-     {
-       assert( majorColor[0] == AmajorColor_c);
-       assert( minorColor[1] == AminorColor_c);
-     }
+   
+    /* Below assert function will be check each pair */
+    printf (" connt");
+    assert( majorColor[AIndex_i / Max_Major_Color] == AmajorColor_c);
+    assert( minorColor[AIndex_i % Max_Minor_Color] == AminorColor_c);
+     
     printf("%d | %s | %s\n", AIndex_i , AmajorColor_c, AminorColor_c);
 }
 
