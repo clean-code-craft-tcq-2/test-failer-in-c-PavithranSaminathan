@@ -12,7 +12,7 @@ void printOnConsole(int AIndex_i , const char* AmajorColor_c , const char* Amino
     const char* minorColor[] = {"Blue", "Orange", "Green", "Brown", "Slate"};
    
     /* Below assert function will be check each pair */
-    printf (" connt");
+    
     assert( majorColor[AIndex_i / Max_Major_Color] == AmajorColor_c);
     assert( minorColor[AIndex_i % Max_Minor_Color] == AminorColor_c);
      
