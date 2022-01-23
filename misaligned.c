@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <assert.h>
 
-void printOnConsole(int AIndex_i , char* AmajorColor_c , char* AminorColor_c)
+void printOnConsole(int AIndex_i , const char* AmajorColor_c , const char* AminorColor_c)
 {
     const char* majorColor[] = {"White", "Red", "Black", "Yellow", "Violet"};
     const char* minorColor[] = {"Blue", "Orange", "Green", "Brown", "Slate"};
