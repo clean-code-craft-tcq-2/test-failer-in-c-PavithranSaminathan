@@ -6,6 +6,7 @@
 int alertFailureCount = 0;
 int Test_alertFailureCount=0;
 
+//Stub function for Network Alert in AlertInCelcius_Test testcase
 int NetworkAlertStub(float celcius)
 {
     printf("ALERT: Temperature is %.1f celcius.\n", celcius);
@@ -19,6 +20,7 @@ int NetworkAlertStub(float celcius)
     }
 }
 
+// Test function for AlerterInCelcius
 void AlertInCelcius_Test(float farenheit)
 {
     float celcius = (farenheit - 32) * 5 / 9;
@@ -33,6 +35,8 @@ void AlertInCelcius_Test(float farenheit)
     }
 }
 
+//Real network aleter function for alertInCelcius
+//This function will return error status based on threshold
 int networkAlert(float celcius)
 {
     printf("ALERT: Temperature is %.1f celcius.\n", celcius);
@@ -46,6 +50,7 @@ int networkAlert(float celcius)
     }    
 }
 
+//This function will convert farenheit to celcius and test the alert
 void alertInCelcius(float farenheit)
 {
     float celcius = (farenheit - 32) * 5 / 9;
