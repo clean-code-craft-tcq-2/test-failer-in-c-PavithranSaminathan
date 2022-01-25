@@ -4,11 +4,12 @@
 #define THRESHOLD_VALUE 300
 
 int alertFailureCount = 0;
+int Test_alertFailureCount=0;
 
 int NetworkAlertStub(float celcius)
 {
     printf("ALERT: Temperature is %.1f celcius.\n", celcius);
-    if(Threshold > celcius)
+    if(THRESHOLD_VALUE > celcius)
     {
         return 500;
     }
