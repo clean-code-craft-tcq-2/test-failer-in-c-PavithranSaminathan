@@ -21,7 +21,7 @@ color_pair colormap(int pairnumber)
 }
 void printOnConsole(int i, const color_pair AColor_Pair)
 {
-    printf("%d, %s %s",i,AColor_Pair.Major_Color,AColor_Pair.Minor_Color);
+    printf("\n %d, %s %s",i,AColor_Pair.Major_Color,AColor_Pair.Minor_Color);
 }
     
 int main() {
