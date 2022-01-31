@@ -6,15 +6,15 @@
 
 struct color_pair
 {
-    char* Major_Color;
-    char* Minor_Color;
+    const char* Major_Color;
+    const char* Minor_Color;
 };
 
 color_pair colormap(int pairnumber)
 {
     color_pair Lcolor_pair;
     
-    Lcolor_pair.Major_Color = majorColor[(pairnumber-1)\5];
+    Lcolor_pair.Major_Color = majorColor[(pairnumber-1)/5];
     Lcolor_pair.Minor_Color = minorColor[(pairnumber-1)%5];
     
     return Lcolor_pair;
