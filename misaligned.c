@@ -14,18 +14,15 @@ struct color_pair
 };
 
 void printOnConsole(int i, const color_pair AColor_Pair);
-void colormap(int Apairnumber);
+color_pair colormap(int Apairnumber);
 
 
 
 color_pair colormap(int Apairnumber)
 {   
-    color_pair LColor_Pair;
- 
+    color_pair LColor_Pair; 
     LColor_Pair.Major_Color = majorColor[(Apairnumber-1)/5];
     LColor_Pair.Minor_Color = minorColor[(Apairnumber-1)%5];
- 
-    
 }
 
 void printOnConsole(int i, const color_pair AColor_Pair)
