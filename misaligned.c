@@ -7,14 +7,16 @@ static int PairNumber;
 const char* majorColor[] = {"White", "Red", "Black", "Yellow", "Violet"};
 const char* minorColor[] = {"Blue", "Orange", "Green", "Brown", "Slate"};
 
-void printOnConsole(int i, const color_pair AColor_Pair);
-void colormap(int Apairnumber);
-
 struct color_pair
 {
     const char* Major_Color;
     const char* Minor_Color;
 };
+
+void printOnConsole(int i, const color_pair AColor_Pair);
+void colormap(int Apairnumber);
+
+
 
 void colormap(int Apairnumber)
 {   
