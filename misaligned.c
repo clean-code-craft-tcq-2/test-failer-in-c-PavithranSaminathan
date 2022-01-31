@@ -1,11 +1,14 @@
 #include <stdio.h>
 #include <assert.h>
 
-#define MAX_PAIRNUMBER 25U
+#define MAX_PAIRNUMBER 25
 static int pairnumber;
 
 const char* majorColor[] = {"White", "Red", "Black", "Yellow", "Violet"};
 const char* minorColor[] = {"Blue", "Orange", "Green", "Brown", "Slate"};
+
+void printOnConsole(int i, const color_pair AColor_Pair);
+void colormap(int Apairnumber);
 
 struct color_pair
 {
@@ -32,7 +35,7 @@ int main() {
    
     for(pairnumber=1; MAX_PAIRNUMBER >= pairnumber ; pairnumber++)
     {
-       colormap(pairnumber,Color_Pair);
+       colormap(pairnumber);
     }
     return 0;
 }
