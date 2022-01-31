@@ -23,6 +23,7 @@ color_pair colormap(int Apairnumber)
     color_pair LColor_Pair; 
     LColor_Pair.Major_Color = majorColor[(Apairnumber-1)/5];
     LColor_Pair.Minor_Color = minorColor[(Apairnumber-1)%5];
+    return LColor_Pair;
 }
 
 void printOnConsole(int i, const color_pair AColor_Pair)
@@ -30,7 +31,8 @@ void printOnConsole(int i, const color_pair AColor_Pair)
     printf("\n %d, %s %s",i,AColor_Pair.Major_Color,AColor_Pair.Minor_Color);
 }
     
-int main() {
+int main()
+{
     
     color_pair Color_Pair;
     
