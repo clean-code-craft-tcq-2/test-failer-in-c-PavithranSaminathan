@@ -1,8 +1,11 @@
 #include <stdio.h>
 #include <assert.h>
 
- const char* majorColor[] = {"White", "Red", "Black", "Yellow", "Violet"};
- const char* minorColor[] = {"Blue", "Orange", "Green", "Brown", "Slate"};
+#define MAX_PAIRNUMBER 25U
+static int pairnumber;
+
+const char* majorColor[] = {"White", "Red", "Black", "Yellow", "Violet"};
+const char* minorColor[] = {"Blue", "Orange", "Green", "Brown", "Slate"};
 
 struct color_pair
 {
@@ -10,30 +13,26 @@ struct color_pair
     const char* Minor_Color;
 };
 
-color_pair colormap(int pairnumber)
-{
-    color_pair Lcolor_pair;
-    
-    Lcolor_pair.Major_Color = majorColor[(pairnumber-1)/5];
-    Lcolor_pair.Minor_Color = minorColor[(pairnumber-1)%5];
-    
-    return Lcolor_pair;
+void colormap(int Apairnumber)
+{   
+    color_pair LColor_Pair;
+ 
+    LColor_Pair.Major_Color = majorColor[(Apairnumber-1)/5];
+    LColor_Pair.Minor_Color = minorColor[(Apairnumber-1)%5];
+ 
+    printOnConsole(pairnumber,LColor_Pair);
 }
+
 void printOnConsole(int i, const color_pair AColor_Pair)
 {
     printf("\n %d, %s %s",i,AColor_Pair.Major_Color,AColor_Pair.Minor_Color);
 }
     
 int main() {
-    color_pair Color_Pair;
-    int i;
-    for(i=1; 25 >= i ; i++)
+   
+    for(pairnumber=1; MAX_PAIRNUMBER >= pairnumber ; pairnumber++)
     {
-       Color_Pair =colormap(i);
-       printOnConsole(i,Color_Pair);
+       colormap(pairnumber,Color_Pair);
     }
-   // int result = printColorMap();
-   // assert(result == 25);
-   // printf("All is well (maybe!)\n");
     return 0;
 }
