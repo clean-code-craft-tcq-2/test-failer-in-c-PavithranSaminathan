@@ -32,10 +32,8 @@ void printOnConsole(int i, const color_pair AColor_Pair)
 }
     
 int main()
-{
-    
-    color_pair Color_Pair;
-    
+{    
+    color_pair Color_Pair;    
     for(PairNumber=1; MAX_PAIRNUMBER >= PairNumber ; PairNumber++)
     {
        Color_Pair=colormap(PairNumber);
@@ -43,6 +41,7 @@ int main()
     }
     return 0;
 }
+
 test main()
 {
     color_pair Color_Pair;
