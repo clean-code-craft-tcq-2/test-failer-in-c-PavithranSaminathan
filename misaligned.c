@@ -2,7 +2,7 @@
 #include <assert.h>
 
 #define MAX_PAIRNUMBER 25
-static int pairnumber;
+static int PairNumber;
 
 const char* majorColor[] = {"White", "Red", "Black", "Yellow", "Violet"};
 const char* minorColor[] = {"Blue", "Orange", "Green", "Brown", "Slate"};
@@ -23,7 +23,7 @@ void colormap(int Apairnumber)
     LColor_Pair.Major_Color = majorColor[(Apairnumber-1)/5];
     LColor_Pair.Minor_Color = minorColor[(Apairnumber-1)%5];
  
-    printOnConsole(pairnumber,LColor_Pair);
+    printOnConsole(Apairnumber,LColor_Pair);
 }
 
 void printOnConsole(int i, const color_pair AColor_Pair)
@@ -33,9 +33,9 @@ void printOnConsole(int i, const color_pair AColor_Pair)
     
 int main() {
    
-    for(pairnumber=1; MAX_PAIRNUMBER >= pairnumber ; pairnumber++)
+    for(PairNumber=1; MAX_PAIRNUMBER >= PairNumber ; PairNumber++)
     {
-       colormap(pairnumber);
+       colormap(PairNumber);
     }
     return 0;
 }
