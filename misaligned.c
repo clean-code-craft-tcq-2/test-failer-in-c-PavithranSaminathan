@@ -16,10 +16,6 @@ struct color_pair
     const char* Minor_Color;
 };
 
-/*** Function declaration ****/
-void (*Print_Output)(int,const color_pair);
-void (*AssertFun)(int,const char*,const char*,color_pair);
-
 /**! Breif :- Function to print data on console ***/
 void printOnConsole(int PairNumber, const color_pair AColor_Pair)
 {
@@ -52,10 +48,7 @@ void TestFun(int APairNumber,const char* Major_C , const char * Minor_C)
 int main()
 {    
     color_pair Color_Pair;  
-    
-   // void (*Print_Output)(int,const color_pair)=&printOnConsole; 
-   // void (*AssertFun)(int,const char*,const char*) =&TestFun;
-    
+      
     for(PairNumber=1; MAX_PAIRNUMBER >= PairNumber ; PairNumber++)
     {
          Color_Pair=colormap(PairNumber); 
