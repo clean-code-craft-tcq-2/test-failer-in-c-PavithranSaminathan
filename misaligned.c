@@ -56,6 +56,6 @@ int main()
     AssertFun(6,  "Red",   "Blue",Color_Pair,Print_Output);
     AssertFun(11, "Black", "Blue",Color_Pair,Print_Output);
     AssertFun(20, "Yellow","Slate",Color_Pair,Print_Output);
-    AssertFun(25, "White", "Slate",Color_Pair,Print_Output);
+    AssertFun(25, "Violet", "Slate",Color_Pair,Print_Output);
     return 0;
 }
