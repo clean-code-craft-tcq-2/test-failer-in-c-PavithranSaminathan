@@ -26,7 +26,7 @@ color_pair colormap(int Apairnumber, color_pair AColor_Pair, void (*Print_Output
     
     (*Print_Output)(Apairnumber,AColor_Pair);
     
-    return LColor_Pair;
+    return AColor_Pair;
 }
 
 
