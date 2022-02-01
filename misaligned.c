@@ -50,7 +50,7 @@ int main()
     
     for(PairNumber=1; MAX_PAIRNUMBER >= PairNumber ; PairNumber++)
     {
-       Color_Pair=colormap(PairNumber,Color_Pair,Print_Output);    
+       colormap(PairNumber,Color_Pair,Print_Output);    
     }
     
     AssertFun(2, "White","Orange",Color_Pair);
