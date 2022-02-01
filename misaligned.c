@@ -32,7 +32,7 @@ color_pair colormap(int Apairnumber, color_pair AColor_Pair, void (*Print_Output
     return AColor_Pair;
 }
 
-void TestFun(int Apairnumber,const char* Major_C , const char * Minor_C, const color_pair AColor_Pair)
+void TestFun(int Apairnumber,const char* Major_C , const char * Minor_C,color_pair AColor_Pair)
 {
   AColor_Pair =  colormap(Apairnumber,AColor_Pair,Print_Output);   
     
@@ -47,7 +47,7 @@ int main()
     
     void (*Print_Output)(int,const color_pair)=printOnConsole;
     
-   void (*AssertFun)(int,const char*,const char*,const color_pair) = TestFun;
+   void (*AssertFun)(int,const char*,const char*,color_pair) = TestFun;
     
     
     for(PairNumber=1; MAX_PAIRNUMBER >= PairNumber ; PairNumber++)
