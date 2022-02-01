@@ -27,20 +27,20 @@ void printOnConsole(int i, const color_pair AColor_Pair)
 }
 
 /**! Breif :- Function to map color pair against pair number ***/
-color_pair colormap(int Apairnumber, color_pair AColor_Pair, void (*Print_Output)(int,color_pair))
+void colormap(int Apairnumber, color_pair AColor_Pair, void (*Print_Output)(int,color_pair))
 {       
     AColor_Pair.Major_Color = majorColor[(Apairnumber-1)/5];
     AColor_Pair.Minor_Color = minorColor[(Apairnumber-1)%5];
     
     Print_Output(Apairnumber,AColor_Pair);    
-    return AColor_Pair;
+  
 }
 
 /***! Breif :-  Assert Function to check color pair against Pair number*/
 
 void TestFun(int APairNumber,const char* Major_C , const char * Minor_C, color_pair AColor_Pair , void (*Print_Output)(int,color_pair))
 {
-    AColor_Pair =  colormap(APairNumber,AColor_Pair,Print_Output);   
+    colormap(APairNumber,AColor_Pair,Print_Output);   
   
     assert(AColor_Pair.Major_Color ==Major_C);
     assert(AColor_Pair.Minor_Color ==Minor_C);
