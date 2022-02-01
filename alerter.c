@@ -12,10 +12,16 @@ int Test_alertFailureCount=0;
 #define     ENVIRONMENT     0U
 
 //Stub function for Network Alert in AlertInCelcius_Test testcase
-int NetworkAlertStub(float celcius)
+int NetworkAlertStub_NOK(float celcius)
 {
     printf("ALERT: Temperature is %.1f celcius.\n", celcius);   
     return 500;    
+}
+
+int NetworkAlertStub_OK(float celcius)
+{
+    printf("ALERT: Temperature is %.1f celcius.\n", celcius);   
+    return 200;    
 }
 
 //Real network aleter function for alertInCelcius
@@ -47,7 +53,7 @@ void alertInCelcius(float farenheit, int (*NetWorkAlert_FunP)(float celcius))
 int main() 
 {
     
-    int (*NetWorkAlert_FunP[2])(float celcius) ={NetworkAlert,NetworkAlertStub};
+    int (*NetWorkAlert_FunP[3])(float celcius) ={NetworkAlert,NetworkAlertStub_OK,NetworkAlertStub_NOK};
     
     #if (ENVIRONMENT == PRODUCTION)
     
@@ -58,6 +64,11 @@ int main()
     
     alertInCelcius(400.5,NetWorkAlert_FunP[1]);
     alertInCelcius(303.6,NetWorkAlert_FunP[1]);
+    
+    assert(alertFailureCount == 0);
+    
+    alertInCelcius(400.5,NetWorkAlert_FunP[2]);
+    alertInCelcius(303.6,NetWorkAlert_FunP[2]);
     
     assert(alertFailureCount == 2);
     
