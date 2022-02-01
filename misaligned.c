@@ -33,8 +33,9 @@ color_pair colormap(int Apairnumber, color_pair AColor_Pair, void (*Print_Output
 
 void TestFun(int APairNumber,const char* Major_C , const char * Minor_C, color_pair AColor_Pair)
 {
-  AColor_Pair =  colormap(APairNumber,AColor_Pair,Print_Output);   
-    
+  //AColor_Pair =  colormap(APairNumber,AColor_Pair,Print_Output);   
+    AColor_Pair.Major_Color = "White";
+    AColor_Pair.Minor_Color = "Orange"
     assert(AColor_Pair.Major_Color ==Major_C);
     assert(AColor_Pair.Minor_Color ==Minor_C);
 }
