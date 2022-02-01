@@ -20,7 +20,7 @@ char size(int cms) {
         sizeName = 'M';
     }
     
-    else if(MINIMUM_SIZE_IN_LARGE >= cms)
+    else if(MINIMUM_SIZE_IN_LARGE <= cms)
     {
         sizeName = 'L';
     }
