@@ -47,7 +47,7 @@ void alertInCelcius(float farenheit, int (*NetWorkAlert_FunP)(float celcius))
 int main() 
 {
     
-    int (*NetWorkAlert_FunP)(float celcius) ={NetworkAlert,NetworkAlertStub};
+    int (*NetWorkAlert_FunP[2])(float celcius) ={NetworkAlert,NetworkAlertStub};
     
     #if (ENVIRONMENT == PRODUCTION)
     
