@@ -51,6 +51,6 @@ int main()
     {
        colormap(PairNumber,Color_Pair,Print_Output);    
     }
-    AssertFun(2, "White","Orange",Color_Pair,Print_Output);
+    AssertFun(2, "White","Bluw",Color_Pair,Print_Output);
     return 0;
 }
