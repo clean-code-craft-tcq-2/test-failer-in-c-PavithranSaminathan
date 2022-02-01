@@ -7,10 +7,8 @@
 
 static int PairNumber;
 
-
 const char* majorColor[] = {"White", "Red", "Black", "Yellow", "Violet"};
 const char* minorColor[] = {"Blue", "Orange", "Green", "Brown", "Slate"};
-
 
 struct color_pair
 {
@@ -47,7 +45,6 @@ void TestFun(int APairNumber,const char* Major_C , const char * Minor_C, color_p
     assert(AColor_Pair.Major_Color ==Major_C);
     assert(AColor_Pair.Minor_Color ==Minor_C);
 }
-
     
 int main()
 {    
