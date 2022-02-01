@@ -37,13 +37,9 @@ int NetworkAlert(float celcius)
 void alertInCelcius(float farenheit, int (*NetWorkAlert_FunP[])(float celcius))
 {
     float celcius = (farenheit - 32) * 5 / 9;
-    int returnCode = NetWorkAlert_FunP(celcius);
+    int returnCode = NetWorkAlert_FunP[](celcius);
     if (returnCode != 200)
     {
-        // non-ok response is not an error! Issues happen in life!
-        // let us keep a count of failures to report
-        // However, this code doesn't count failures!
-        // Add a test below to catch this bug. Alter the stub above, if needed.
         alertFailureCount += 1;
     }
 }
@@ -51,7 +47,7 @@ void alertInCelcius(float farenheit, int (*NetWorkAlert_FunP[])(float celcius))
 int main() 
 {
     
-    int (*NetWorkAlert_FunP[])(float celcius) ={NetworkAlert,NetworkAlertStub};
+    int (*NetWorkAlert_FunP[2])(float celcius) ={NetworkAlert,NetworkAlertStub};
     
     #if (ENVIRONMENT == PRODUCTION)
     
