@@ -45,7 +45,7 @@ int main()
 {    
     color_pair Color_Pair;  
     
-    void (*Print_Output)(int,const color_pair)=printOnConsole;
+    void (*Print_Output)(int,const color_pair)=&printOnConsole;
     
    void (*AssertFun)(int,const char*,const char*,color_pair) = TestFun;
     
