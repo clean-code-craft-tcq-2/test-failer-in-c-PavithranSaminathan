@@ -24,7 +24,7 @@ color_pair colormap(int Apairnumber, color_pair AColor_Pair, void (*Print_Output
     AColor_Pair.Major_Color = majorColor[(Apairnumber-1)/5];
     AColor_Pair.Minor_Color = minorColor[(Apairnumber-1)%5];
     
-    (*Print_Output)(Apairnumber,AColor_Pair);
+    Print_Output(Apairnumber,AColor_Pair);
     
     return AColor_Pair;
 }
