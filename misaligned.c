@@ -42,7 +42,7 @@ int main()
     
     for(PairNumber=1; MAX_PAIRNUMBER >= PairNumber ; PairNumber++)
     {
-       Color_Pair=colormap(PairNumber,Color_Pair,&printOnConsole);
+       Color_Pair=colormap(PairNumber,Color_Pair,Print_Output);
     //   printOnConsole(Apairnumber,Color_Pair);
     }
     return 0;
