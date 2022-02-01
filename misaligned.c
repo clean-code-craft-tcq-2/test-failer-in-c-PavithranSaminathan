@@ -35,7 +35,7 @@ int main()
 {    
     color_pair Color_Pair;  
     
-    void (*Print_Output)(int,color_pair)=&printOnConsole;
+    void (*Print_Output)(int,const color_pair)=&printOnConsole;
     
     for(PairNumber=1; MAX_PAIRNUMBER >= PairNumber ; PairNumber++)
     {
