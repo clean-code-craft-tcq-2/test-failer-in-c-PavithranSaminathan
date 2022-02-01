@@ -1,20 +1,7 @@
 /**** Includes  ***/
-#include <stdio.h>
+#include <misaligned.h>
 #include <assert.h>
 
-/****** Macros /Defines  **********/
-#define MAX_PAIRNUMBER 25
-
-static int PairNumber;
-
-const char* majorColor[] = {"White", "Red", "Black", "Yellow", "Violet"};
-const char* minorColor[] = {"Blue", "Orange", "Green", "Brown", "Slate"};
-
-struct color_pair
-{
-    const char* Major_Color;
-    const char* Minor_Color;
-};
 
 /**! Breif :- Function to print data on console ***/
 void printOnConsole(int PairNumber, const color_pair AColor_Pair)
