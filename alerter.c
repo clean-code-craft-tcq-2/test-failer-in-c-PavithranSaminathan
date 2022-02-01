@@ -20,7 +20,7 @@ int NetworkAlertStub(float celcius)
 
 //Real network aleter function for alertInCelcius
 //This function will return error status based on threshold
-int networkAlert(float celcius)
+int NetworkAlert(float celcius)
 {
     printf("ALERT: Temperature is %.1f celcius.\n", celcius);
     if(THRESHOLD_VALUE > celcius)
@@ -51,17 +51,17 @@ void alertInCelcius(float farenheit, int (*NetWorkAlert_FunP[])(float celcius))
 int main() 
 {
     
-    int (*NetWorkAlert_FunP[])(float celcius)[] ={networkAlert,networkAlertStub};
+    int (*NetWorkAlert_FunP[])(float celcius) ={NetworkAlert,NetworkAlertStub};
     
     #if (ENVIRONMENT == PRODUCTION)
     
-    alertInCelcius(400.5,networkAlert);
-    alertInCelcius(303.6,networkAlert);
+    alertInCelcius(400.5,NetWorkAlert_FunP[0]);
+    alertInCelcius(303.6,NetWorkAlert_FunP[0]);
     
     #elif (ENVIRONMENT == TEST)
     
-    alertInCelcius(400.5,networkAlertStub);
-    alertInCelcius(303.6,networkAlertStub);
+    alertInCelcius(400.5,NetWorkAlert_FunP[1]);
+    alertInCelcius(303.6,NetWorkAlert_FunP[1]);
     
     assert(alertFailureCount == 2);
     
