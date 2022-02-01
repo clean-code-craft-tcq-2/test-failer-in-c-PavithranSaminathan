@@ -32,7 +32,7 @@ void colormap(int Apairnumber, color_pair AColor_Pair, void (*Print_Output)(int,
 
 void TestFun(int Apairnumber,const char* Major_C , const char * Minor_C, const color_pair AColor_Pair)
 {
- //   colormap(Apairnumber,AColor_Pair,Print_Output);   
+    colormap(Apairnumber,&AColor_Pair,Print_Output);   
     
  //   assert(AColor_Pair.Major_Color ==Major_C);
     assert(AColor_Pair.Minor_Color ==Minor_C);
