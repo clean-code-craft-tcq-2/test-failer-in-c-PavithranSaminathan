@@ -13,39 +13,34 @@ struct color_pair
     const char* Minor_Color;
 };
 
-void printOnConsole(int i, const color_pair AColor_Pair);
-color_pair colormap(int Apairnumber);
-
-
-
-color_pair colormap(int Apairnumber)
-{   
-    color_pair LColor_Pair; 
-    LColor_Pair.Major_Color = majorColor[(Apairnumber-1)/5];
-    LColor_Pair.Minor_Color = minorColor[(Apairnumber-1)%5];
-    return LColor_Pair;
-}
-
 void printOnConsole(int i, const color_pair AColor_Pair)
 {
     printf("\n %d, %s %s",i,AColor_Pair.Major_Color,AColor_Pair.Minor_Color);
 }
+
+color_pair colormap(int Apairnumber, color_pair AColor_Pair, void (*Print_Output)(int,color_pair))
+{   
+    
+    AColor_Pair.Major_Color = majorColor[(Apairnumber-1)/5];
+    AColor_Pair.Minor_Color = minorColor[(Apairnumber-1)%5];
+    
+    (*Print_Output)(Apairnumber,AColor_Pair);
+    
+    return LColor_Pair;
+}
+
+
     
 int main()
 {    
-    color_pair Color_Pair;    
+    color_pair Color_Pair;  
+    
+    void (*Print_Output)(int,color_pair)=&printOnConsole;
+    
     for(PairNumber=1; MAX_PAIRNUMBER >= PairNumber ; PairNumber++)
     {
-       Color_Pair=colormap(PairNumber);
-       printOnConsole(Apairnumber,Color_Pair);
+       Color_Pair=colormap(PairNumber,Color_Pair,&printOnConsole);
+    //   printOnConsole(Apairnumber,Color_Pair);
     }
     return 0;
-}
-
-test main()
-{
-    color_pair Color_Pair;
-    Color_Pair=colormap(5);
-    assert(LColor_Pair.Major_Color == "White");
-    assert(LColor_Pair.Minor_Color == "Slate"); 
 }
