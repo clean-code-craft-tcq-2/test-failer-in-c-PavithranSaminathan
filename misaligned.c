@@ -63,10 +63,10 @@ int main()
     }
     
     TestFun(2,  "White",      "Orange" );
-    TestFun(5,  "White",      "Slate", );
-    TestFun(6,  "Red",        "Blue",  );
-    TestFun(11, "Black",      "Blue",  );
-    TestFun(20, "Yellow",     "Slate", );
-    TestFun(25, "Violet",     "Slate", );
+    TestFun(5,  "White",      "Slate"  );
+    TestFun(6,  "Red",        "Blue"   );
+    TestFun(11, "Black",      "Blue"   );
+    TestFun(20, "Yellow",     "Slate"  );
+    TestFun(25, "Violet",     "Slate"  );
     return 0;
 }
