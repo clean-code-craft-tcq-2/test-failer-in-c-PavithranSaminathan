@@ -34,7 +34,7 @@ int networkAlert(float celcius)
 }
 
 //This function will convert farenheit to celcius and test the alert
-void alertInCelcius(float farenheit, int (*NetWorkAlert_FunP)(float celcius))
+void alertInCelcius(float farenheit, int (*NetWorkAlert_FunP[])(float celcius))
 {
     float celcius = (farenheit - 32) * 5 / 9;
     int returnCode = NetWorkAlert_FunP(celcius);
@@ -51,17 +51,17 @@ void alertInCelcius(float farenheit, int (*NetWorkAlert_FunP)(float celcius))
 int main() 
 {
     
-    int (*NetWorkAlert_FunP)(float celcius)[] ={networkAlert,networkAlertStub};
+    int (*NetWorkAlert_FunP[])(float celcius)[] ={networkAlert,networkAlertStub};
     
     #if (ENVIRONMENT == PRODUCTION)
     
-    AlertInCelcius(400.5,networkAlert);
-    AlertInCelcius(303.6,networkAlert);
+    alertInCelcius(400.5,networkAlert);
+    alertInCelcius(303.6,networkAlert);
     
     #elif (ENVIRONMENT == TEST)
     
-    AlertInCelcius(400.5,networkAlertStub);
-    AlertInCelcius(303.6,networkAlertStub);
+    alertInCelcius(400.5,networkAlertStub);
+    alertInCelcius(303.6,networkAlertStub);
     
     assert(alertFailureCount == 2);
     
