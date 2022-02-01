@@ -31,9 +31,9 @@ color_pair colormap(int Apairnumber, color_pair AColor_Pair, void (*Print_Output
     return AColor_Pair;
 }
 
-void TestFun(int APairNumber,const char* Major_C , const char * Minor_C, color_pair AColor_Pair)
+void TestFun(int APairNumber,const char* Major_C , const char * Minor_C, color_pair AColor_Pair , void (*Print_Output)(int,color_pair))
 {
-  //AColor_Pair =  colormap(APairNumber,AColor_Pair,Print_Output);   
+    AColor_Pair =  colormap(APairNumber,AColor_Pair,Print_Output);   
     AColor_Pair.Major_Color = "White";
     AColor_Pair.Minor_Color = "Orange";
     (void)APairNumber;
@@ -47,12 +47,12 @@ int main()
     color_pair Color_Pair;  
     
     void (*Print_Output)(int,const color_pair)=&printOnConsole; 
-    void (*AssertFun)(int,const char*,const char*,color_pair) =&TestFun;
+    void (*AssertFun)(int,const char*,const char*,color_pair, void (*Print_Output)(int,color_pair)) =&TestFun;
     
     for(PairNumber=1; MAX_PAIRNUMBER >= PairNumber ; PairNumber++)
     {
        colormap(PairNumber,Color_Pair,Print_Output);    
     }
-    AssertFun(2, "White","Orange",Color_Pair);
+    AssertFun(2, "White","Orange",Color_Pair,Print_Output);
     return 0;
 }
